@@ -155,7 +155,7 @@ const Pokedex = () => {
         </form>
 
         {/* paginacion */}
-        <section className="flex flex-col justify-center items-center">
+        <section className="flex flex-col justify-center items-center ">
           <PokemonsList
             pokemons={pokemonsByName}
             pokemonInPage={pokemonInPage}

@@ -74,8 +74,9 @@ const PokemonId = () => {
         >
           <div className="absolute w-[13rem] -top-20">
             <img
+            className="animate-bounce"
               src={pokemon?.sprites.other["official-artwork"].front_default}
-              alt=""
+              alt={pokemon?.name}
             />
           </div>
         </article>
@@ -93,7 +94,7 @@ const PokemonId = () => {
               </span>
             </div>
             <div className="grid grid-cols-[2fr_1fr_2fr] mx-2 xxs:mx-0">
-              <div className=" col-span-1 flex justify-center items-center">
+              <div className=" col-span-1 flex justify-center items-center mt-5 mr-4 xxs:mr-0">
                 <div className="w-full xxs:w-[16rem] h-[2px] bg-gray-300"></div>
               </div>
               <h2
@@ -103,7 +104,7 @@ const PokemonId = () => {
               >
                 {pokemon?.name}
               </h2>
-              <div className=" col-span-1 flex justify-center items-center">
+              <div className=" col-span-1 flex justify-center items-center mt-5 ml-4 xxs:ml-0">
                 <div className="w-full xxs:w-[16rem] h-[2px] bg-gray-300"></div>
               </div>
             </div>

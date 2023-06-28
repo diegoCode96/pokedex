@@ -82,18 +82,18 @@ const PokemonCard = ({ pokemonUrl }) => {
 
 
 
-  console.log(pokemon);
+
   return (
-    <Link to={`/pokedex/${pokemon?.name}`} className={`${pokeBorderColor[pokemon?.types[0].type.name]} w-72`}>
+    <Link to={`/pokedex/${pokemon?.name}`} className={` ${pokeBorderColor[pokemon?.types[0].type.name]} w-72`}>
       {/* seccion superior */}
       <section
-        className={`relative h-36 ${
+        className={`relative h-36  ${
           pokeLineargradients[pokemon?.types[0].type.name]
         }`}
       >
-        <div className="absolute px-12 -bottom-12 right-1">
+        <div className="absolute px-12 -bottom-12 right-1 ">
           <img
-            className="w-50 h-40"
+            className="w-50 h-40 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100"
             src={pokemon?.sprites.other["official-artwork"].front_default}
             alt={pokemon?.name}
           />
