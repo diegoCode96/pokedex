@@ -7,7 +7,7 @@ import PokemonsList from "../components/pokedex/PokemonsList";
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
 
-  const [pokemonName, setPokemonName] = useState("");
+  const [namePokemon, setNamePokemon] = useState("");
 
   const [types, setTypes] = useState([]);
 
@@ -19,11 +19,11 @@ const Pokedex = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPokemonName(e.target.pokemonName.value);
+    setNamePokemon(e.target.namePokemon.value);
   };
 
   const pokemonsByName = pokemons.filter((pokemon) =>
-    pokemon.name.toLowerCase().includes(pokemonName.toLowerCase())
+    pokemon.name.toLowerCase().includes(namePokemon.toLowerCase())
   );
 
   const handleChangeType = (e) => {
@@ -77,7 +77,7 @@ const Pokedex = () => {
 
   useEffect(() => {
     if (!currentType) {
-      const URL = "https://pokeapi.co/api/v2/pokemon?limit=1200";
+      const URL = "https://pokeapi.co/api/v2/pokemon?limit=1281";
       axios
         .get(URL)
         .then(({ data }) => setPokemons(data.results))
@@ -107,6 +107,11 @@ const Pokedex = () => {
         .catch((err) => console.log(err));
     }
   }, [currentType]);
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [namePokemon, currentType])
+  
 
   return (
     <main>
@@ -158,6 +163,8 @@ const Pokedex = () => {
             setCurrentPage={setCurrentPage}
             handleClickPreviusPage={handleClickPreviusPage}
             handleClickNextPage={handleClickNextPage}
+            currentPage={currentPage}
+            lastPage={lastPage}
           />
         </section>
       </div>

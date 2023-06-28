@@ -20,6 +20,7 @@ const pokeLineargradients = {
   electric: "bg-gradient-to-t from-[#7075D9] to-[#0C1395]",
   ground: "bg-gradient-to-t from-[#895C1A] to-[#654008]",
   fairy: "bg-gradient-to-t from-rose-300 to-rose-500",
+  flying: "bg-gradient-to-t from-sky-300 to-rose-300",
 };
 
 const pokeBorderColor = {
@@ -40,6 +41,7 @@ const pokeBorderColor = {
   electric: "border-[9px] border-[#0C1395] rounded-xl",
   ground: "border-[9px] border-[#654008] rounded-xl",
   fairy: "border-[9px] border-rose-500 rounded-xl",
+  flying:"border-[9px] border-rose-300 rounded-xl",
 };
 
 const pokeTextColors = {
@@ -60,6 +62,7 @@ const pokeTextColors = {
   electric: "text-[#0C1395]",
   ground: "text-[#654008]",
   fairy: "text-rose-500",
+  flying: "text-rose-300",
 };
 
 const PokemonCard = ({ pokemonUrl }) => {
